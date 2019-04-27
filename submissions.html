@@ -31,9 +31,9 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">FixYourRoad</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="index.html" class="white black-text hoverable">Home</a></li>
+          <li><a href="index.html" class="hoverable">Home</a></li>
           <li><a href="account.html" class="hoverable">Account</a></li>
-          <li><a href="submissions.html" class="hoverable">Submissions</a></li>
+          <li><a href="submissions.html" class="white black-text hoverable">Submissions</a></li>
           <li><a href="maps.html" class="hoverable">Map</a></li>
           <li><a href="#" data-target="slide-out" class="sidenav-trigger hoverable"><i class="material-icons">menu</i></a></li>
         </ul>
@@ -58,48 +58,19 @@
   </nav>
 
   <br>
-  <div class="container center-align">
 
+    <div id="map"></div>
 
-    <form action="#">
-      <div class="file-field input-field">
-        <div class="btn green waves-effect waves-light">
-          <span>Upload Picture</span>
-          <input type="file">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
-
-      <!-- THIS IS WHERE GOOGLE API STUFF SHOULD GO -->
-      <div class="container center-align red">
-
-        <div id="homemap"></div>
-
-        <script>
-            function initMap() {
-                var location = {lat: 37.524410, lng: -120.853592};
-                var map = new google.maps.Map(document.getElementById("homemap"), {
-                    zoom: 15,
-                    center: location
-                });
-            }
-        </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
-    
-      </div>
-
-      <br>
-
-      <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
-
-    </form>
-
-
-  </div>
+    <script>
+        function initMap() {
+            var location = {lat: 37.524410, lng: -120.853592};
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: location
+            });
+        } 
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
 
 
   <!--JavaScript at end of body for optimized loading-->
