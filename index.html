@@ -87,7 +87,32 @@
                     zoom: 15,
                     center: location
                 });
+
+                var marker;
+
+                google.maps.event.addListener(map, 'click', function(e) {
+
+                    //Passes a hidden coordinate to the form
+                    var tempLat = e.latLng.lat();
+                    var tempLng = e.latLng.lng();
+                    var geoData = {
+                        lat: tempLat,
+                        lng: tempLng
+                    };
+
+                    marker = new google.maps.Marker({
+                        position: geoData,
+                        map: map,
+                        title: 'Hello, World!'
+                    });
+
+                    console.log(tempLat, tempLng);
+                });
+
+                
             }
+
+            
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
     
@@ -105,7 +130,12 @@
       <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
       </button>
+
+
     </form>
+
+    <div id="coordinate"></div>
+
 
   </div>
 

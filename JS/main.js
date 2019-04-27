@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Sidenav.init(elems, options);
 });
 
-
 // Reference Message Collection
 var messageRef = firebase.database().ref('Pothole Submissions');
 
@@ -28,17 +27,57 @@ function submitForm(e){
   var picPath = getInputVal('picPath');
   var description = getInputVal('description');
 
-  saveMessage(picPath, description);
+  saveMessage(picPath, description, tempLat, tempLng);
 }
 
 function getInputVal(id){
   return document.getElementById(id).value;
 }
 
-function saveMessage(picPath, description){
+function saveMessage(picPath, description, tempLat, tempLng){
   var newMessageRef = messageRef.push();
   newMessageRef.set({
     picPath: picPath,
-    description: description
+    description: description,
+    tempLat: tempLat,
+    tempLng: tempLng
   });
 }
+
+
+var geoData = {
+  lat: 10,
+  lng: 10
+}
+
+var tempLat;
+var tempLng;
+
+
+
+  // // New map
+  // var map = new google.maps.Map(document.getElementById('homemap'), {
+  //   zoom: 15,
+  //   center: location
+  // });
+
+  // // Listen for click on map
+  // google.maps.event.addListener(map, 'click', function(e) {
+
+  //   //Passes a hidden coordinate to the form
+  //   tempLat = e.latLng.lat();
+  //   tempLng = e.latLng.lng();
+  //   console.log(tempLat, tempLng);
+  // });
+
+  // //Listens for the save button to be clicked
+  // document.getElementById("save").addEventListener("click", function() {
+  //   //Initialize variables and retrieve values
+  //   var title = document.getElementById('title').value;
+  //   var description = document.getElementById('description').value;
+  //   var userCoordinates = document.getElementById("latLng").innerText;
+  //   var mapCoord = userCoordinates.split(",", 2);
+
+  //   //Parses the coordinate strings
+  //   var userLat = parseFloat(mapCoord[0]);
+  //   var userLng = parseFloat(mapCoord[1]);}
