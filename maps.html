@@ -57,19 +57,30 @@
 
   <br>
 
-    <div id="homemap"></div>
 
-    <script>
-        function initMap() {
-            var location = {lat: 37.524410, lng: -120.853592};
-            var map = new google.maps.Map(document.getElementById("homemap"), {
-                zoom: 15,
-                center: location
-            });
-        } 
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
+  <div class="row">
 
+        <div class="col s3">
+          <!-- Grey navigation panel -->
+        </div>
+  
+        <div class="col s9">
+            <div id="map"></div>
+
+            <script>
+                function initMap() {
+                    var location = {lat: 37.524410, lng: -120.853592};
+                    var map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 15,
+                        center: location
+                    });
+                } 
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
+        
+        </div>
+  
+      </div>
 
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
