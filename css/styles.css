@@ -12,3 +12,8 @@
     background-color: beige;
     margin: 1rem;
 }
+
+.img_sub{
+    max-height: 20rem;
+    max-width: 20rem;
+}
