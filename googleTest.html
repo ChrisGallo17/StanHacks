@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+
+  Description<h1 id="bigOne"></h1>
+  Test<h1 id="bigTwo"></h1>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCjI3HoQTHMk_t2atkRFc6iWJBaP5JBCbY",
+      authDomain: "turlockpotholes.firebaseapp.com",
+      databaseURL: "https://turlockpotholes.firebaseio.com",
+      projectId: "turlockpotholes",
+      storageBucket: "turlockpotholes.appspot.com",
+      messagingSenderId: "921373741535"
+    };
+
+    firebase.initializeApp(config);
+
+    var db = firebase.database().ref();
+    var bigOne = db.child('Pothole Submissions');
+    var query = bigOne.orderChild('-LdVqq9Emlxu-ICOyOeF').limitToFirst(5);
+    bigOne.on('value', snap => bigOne.innerText = snap.val());
+    query.on('value', snap => bigTwo.innerText = snap.val());
+
+  </script>
+
+</body>
+
+</html>
