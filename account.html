@@ -1,8 +1,97 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+  <!-- Compiled and minified CSS -->
+  <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Imports player.css file -->
+  <link rel="stylesheet" href="player.css">
+  <!-- Imports Quicksand font from Google -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
 <body>
-    <p>
-        test
-    </p>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  <nav class="black">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">FixYourRoad</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Home</a></li>
+          <li><a href="badges.html">Submit</a></li>
+          <li><a href="account.html" class="white black-text">Account</a></li>
+          <li><a href="maps.html">Map</a></li>
+          <li><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+        </ul>
+      </div>
+    </div>
+
+<!-- SIDE BAR -->
+    <ul id="slide-out" class="sidenav">
+      <li><a class="subheader">FixYourRoad</a></li>
+      <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
+      <li><a href="#!"><i class="material-icons">add_a_photo</i>Submit</a></li>
+      <li><a href="#!"><i class="material-icons">account_box</i>Account</a></li>
+      <li><a href="#!"><i class="material-icons">map</i>Map</a></li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li><a class="subheader">Options</a></li>
+      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large left"><i class="material-icons">menu</i></a>
+
+  </nav>
+
+
+  </div>
+
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Player JavaScript file -->
+  <script src="player.js">
+
+  </script>
+  <script id="SideNavID">
+    $(document).ready(function() {
+      $('.sidenav').sidenav();
+    })
+  </script>
+
+  <script id="ImageID">
+    $(document).ready(function() {
+      $('.materialboxed').materialbox();
+    });
+  </script>
+
+  <script id="formAutocompleteID">
+    $(document).ready(function() {
+      $('input.autocomplete').autocomplete({
+        data: {
+          "Apple": null,
+          "Microsoft": null,
+          "Google": 'https://placehold.it/250x250'
+        },
+      });
+    });
+  </script>
+
 </body>
+
+
 </html>
