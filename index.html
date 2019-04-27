@@ -16,13 +16,7 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-        #map{
-            height: 40rem;
-            width: 50rem;
-        }
-
-    </style>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>
 
@@ -80,20 +74,19 @@
       <!-- THIS IS WHERE GOOGLE API STUFF SHOULD GO -->
       <div class="container center-align red">
 
-            <div id="map">
-            
-                </div>
-                <script>
-                    function initMap() {
-                        var location = {lat: 37.524410, lng: -120.853592};
-                        var map = new google.maps.Map(document.getElementById("map"), {
-                            zoom: 15,
-                            center: location
-                        });
-                    }
-                </script>
-                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
-            
+        <div id="homemap"></div>
+
+        <script>
+            function initMap() {
+                var location = {lat: 37.524410, lng: -120.853592};
+                var map = new google.maps.Map(document.getElementById("homemap"), {
+                    zoom: 15,
+                    center: location
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
+    
       </div>
 
       <br>
