@@ -1,9 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, options);
-});
-
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCjI3HoQTHMk_t2atkRFc6iWJBaP5JBCbY",
@@ -16,8 +10,14 @@ var config = {
 firebase.initializeApp(config);
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, options);
+});
+
+
 // Reference Message Collection
-var messageRef = firebase.database().ref('messages');
+var messageRef = firebase.database().ref('Pothole Submissions');
 
 
 document.getElementById('potholeForm').addEventListener('submit', submitForm);
@@ -25,21 +25,20 @@ document.getElementById('potholeForm').addEventListener('submit', submitForm);
 function submitForm(e){
   e.preventDefault();
 
-  console.log(123);
-  var picture = getInputVal('picture');
-  var desc = getInputVal('potholeDescription');
+  var picPath = getInputVal('picPath');
+  var description = getInputVal('description');
 
-  saveMessage(picture, potholeDescription);
+  saveMessage(picPath, description);
 }
 
 function getInputVal(id){
   return document.getElementById(id).value;
 }
 
-function saveMessage(picture, potholeDescription){
-  var newMessageRef = newMessageRef.push();
+function saveMessage(picPath, description){
+  var newMessageRef = messageRef.push();
   newMessageRef.set({
-    picture: picture,
-    potholeDescription: potholeDescription
+    picPath: picPath,
+    description: description
   });
 }
