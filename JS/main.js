@@ -20,7 +20,7 @@ firebase.initializeApp(config);
 var messageRef = firebase.database().ref('messages');
 
 
-document.getElementById('picture').addEventListener('submit', submitForm);
+document.getElementById('potholeForm').addEventListener('submit', submitForm);
 
 function submitForm(e){
   e.preventDefault();
