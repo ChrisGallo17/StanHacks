@@ -50,9 +50,27 @@
 
   </nav>
 
-  <div class="container red">
+  <br>
+  <div class="container red center-align">
 
-<img src="https://developers.google.com/maps/documentation/urls/images/map-no-params.png" alt="">
+
+    <form action="#">
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+    </form>
+
+
+    <br>
+    <br>
+
+    <img class="materialboxed center-align" width="650" src="https://developers.google.com/maps/documentation/urls/images/map-no-params.png">
 
   </div>
 
@@ -67,10 +85,28 @@
   <script src="player.js">
 
   </script>
-  <script>
+  <script id="SideNavID">
     $(document).ready(function() {
       $('.sidenav').sidenav();
     })
+  </script>
+
+  <script id="ImageID">
+    $(document).ready(function() {
+      $('.materialboxed').materialbox();
+    });
+  </script>
+
+  <script id="formAutocompleteID">
+    $(document).ready(function() {
+      $('input.autocomplete').autocomplete({
+        data: {
+          "Apple": null,
+          "Microsoft": null,
+          "Google": 'https://placehold.it/250x250'
+        },
+      });
+    });
   </script>
 
 </body>
