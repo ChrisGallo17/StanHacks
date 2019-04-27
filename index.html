@@ -80,8 +80,20 @@
       <!-- THIS IS WHERE GOOGLE API STUFF SHOULD GO -->
       <div class="container center-align red">
 
-        <img class="materialboxed center-align" width="650" src="https://developers.google.com/maps/documentation/urls/images/map-no-params.png">
-
+            <div id="map">
+            
+                </div>
+                <script>
+                    function initMap() {
+                        var location = {lat: 37.524410, lng: -120.853592};
+                        var map = new google.maps.Map(document.getElementById("map"), {
+                            zoom: 15,
+                            center: location
+                        });
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
+            
       </div>
 
       <br>
