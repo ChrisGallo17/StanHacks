@@ -5,8 +5,8 @@
 
 <body>
 
-  Description<h1 id="bigOne"></h1>
-  Test<h1 id="bigTwo"></h1>
+  Description<h1 id="bigOne">asdfa</h1>
+  Test<h1 id="bigOne">dfsdf</h1>
 
 
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
@@ -23,11 +23,11 @@
 
     firebase.initializeApp(config);
 
-    var db = firebase.database().ref();
-    var bigOne = db.child('Pothole Submissions');
-    var query = bigOne.orderChild('-LdVqq9Emlxu-ICOyOeF').limitToFirst(5);
-    bigOne.on('value', snap => bigOne.innerText = snap.val());
-    query.on('value', snap => bigTwo.innerText = snap.val());
+    var bigOne = document.getElementById('bigOne');
+    var db = firebase.database().ref().child('Pothole Submissions').child('-LdVrsLHJ0n0MYf4fjAv');
+    console.console.log('db');
+    db.on('value', snap => bigOne.innerText = snap.val());
+    db.on('value', snap => bigOne.innerText = snap.val());
 
   </script>
 

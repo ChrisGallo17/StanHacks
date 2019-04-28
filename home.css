@@ -2,7 +2,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url("logo.png");
+  font-family: 'Quicksand', sans-serif;
+  
   background-size: 50%;
   background-color: white;
   /* The image used */
@@ -16,7 +17,7 @@ body {
 
 main {
   flex: 1 0 auto;
-
+  font-family: 'Quicksand', sans-serif;
 
 }
 

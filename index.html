@@ -5,77 +5,39 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
-  <!-- Compiled and minified CSS -->
-  <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Imports player.css file -->
-  <link rel="stylesheet" href="player.css">
-  <!-- Imports Quicksand font from Google -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>
 
+
+
 <body>
 
-  <!--JavaScript at end of body for optimized loading-->
-  <!-- NAV BAR -->
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <header></header>
 
-  <nav class="black">
-    <div class="container">
+  <main>
+
+    <nav class="z-depth-0 transparent">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">FixYourRoad</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="index.html" class="white black-text hoverable">Home</a></li>
-          <li><a href="account.html" class="hoverable">Account</a></li>
-          <li><a href="submissions.html" class="hoverable">Submissions</a></li>
-          <li><a href="maps.html" class="hoverable">Map</a></li>
-          <li><a href="#" data-target="slide-out" class="sidenav-trigger hoverable"><i class="material-icons">menu</i></a></li>
-        </ul>
-      </div>
-    </div>
-
-<!-- SIDE BAR -->
-    <ul id="slide-out" class="sidenav">
-      <li><a class="subheader">FixYourRoad</a></li>
-      <li><a href="index.html"><i class="material-icons">home</i>Home</a></li>
-      <li><a href="account.html"><i class="material-icons">account_box</i>Account</a></li>
-      <li><a href="submissions.html"><i class="material-icons">account_box</i>Submissions</a></li>
-      <li><a href="maps.html"><i class="material-icons">map</i>Map</a></li>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li><a class="subheader">Options</a></li>
-      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large left"><i class="material-icons">menu</i></a>
-
-  </nav>
-
-  <p ALIGN=CENTER><b>Ever gone through a road with a nasty nasty pothole and just thought to yourself there is really nothing you can do about it? <br>
-  Well look no further you can now take a picture of the pothole and make sure something gets done about it!</p>
-
-  <br>
-  <div class="container center-align">
-
-
-
-    <form id="potholeForm" action="#">
-      <div class="file-field input-field">
-        <div class="btn green waves-effect waves-light">
-          <span>Upload Picture</span>
-          <input type="file" id="picPath">
+        <div class="container">
+          <a href="#" class="brand-logo left black-text text-darken-1 show-on-large hide-on-small-only">FixYourRoad</a>
+          <a href="#" class="brand-logo center black-text text-darken-1 hide-on-med-and-up">Pantori</a>
+          <ul id="nav-mobile" class="right show-on-large hide-on-small-only">
+            <li><a href="home.html" class="black-text text-darken-3"><b>Home</b></a></li>
+            <li><a href="account.html" class="black-text text-darken-3"><b>Account</b></a></li>
+            <li><a href="submissions.html" class="black-text text-darken-3"><b>Submissions</b></a></li>
+            <li><a href="map.html" class="black-text text-darken-3"><b>Map</b></a></li>
+          </ul>
         </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
+    </nav>
 
+<<<<<<< HEAD
       <!-- THIS IS WHERE GOOGLE API STUFF SHOULD GO -->
       <div class="center-align red">
       <div id="homemap"></div>
@@ -136,17 +98,32 @@
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
     
+=======
+    <div class="container">
+      <div class="section">
+        <h5>&nbsp;</h5>
+        <p>&nbsp;</p>
+>>>>>>> be8530974abafdacf64fe85199ae5b9ed036a04d
       </div>
+      <div class="section">
+        <h5 style="font-size:54px" class="landingTitle">FixYourRoads
+          <br>
+          <b>Turlock!
+          </b></h5>
+        <hr style="width:210px" align="left">
+        <p class="landingParagraph">Ever gone through a road with a nasty nasty pothole and just thought to yourself there is really nothing you can do about it?
+          Well look no further you can now take a picture of the pothole and make sure something gets done about it!
+        </p>
 
-      <br>
-      <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">description</i>
-            <label for="icon_prefix2">Description</label>
-            <input type="text" id="description"></input>
-        </div>
+        <a href="home.html" class="waves-effect waves-light btn black darken-1">Try it now!</a>
       </div>
+      <div class="section">
+        <h5>&nbsp;</h5>
+        <p>&nbsp;</p>
+      </div>
+    </div>
 
+<<<<<<< HEAD
       <div class="coordinate" id="coordinate"></div>
       <div id=coordinates></div>
 
@@ -159,50 +136,23 @@
 
     <div id="coordinate"></div>
 
+=======
+  </main>
+>>>>>>> be8530974abafdacf64fe85199ae5b9ed036a04d
 
-  </div>
 
 
+  <footer class="page-footer transparent">
+    <div class="footer-copyright transparent">
+      <div class="container grey-text text-lighten-1" style="font-size:11px">
+        © 2019 CSU Stanislaus CS Club, All Rights Reserved
+      </div>
+    </div>
+  </footer>
 
   <!--JavaScript at end of body for optimized loading-->
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  
-  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-  <!-- Player JavaScript file -->
-  <script src="JS/main.js"></script> 
-
-    
-
-  <script id="SideNavID">
-    $(document).ready(function() {
-      $('.sidenav').sidenav();
-    })
-  </script>
-
-  <script id="ImageID">
-    $(document).ready(function() {
-      $('.materialboxed').materialbox();
-    });
-  </script>
-
-  <script id="formAutocompleteID">
-    $(document).ready(function() {
-      $('input.autocomplete').autocomplete({
-        data: {
-          "Apple": null,
-          "Microsoft": null,
-          "Google": 'https://placehold.it/250x250'
-        },
-      });
-    });
-  </script>
-
 </body>
-
 
 </html>
