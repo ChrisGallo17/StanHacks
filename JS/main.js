@@ -26,20 +26,22 @@ function submitForm(e){
 
   var picPath = getInputVal('picPath');
   var description = getInputVal('description');
+  var coordinate = document.getElementById("latLng").innerText;
+  console.log(coordinate);
 
-  saveMessage(picPath, description);
+  saveMessage(picPath, description, coordinate);
 }
 
 function getInputVal(id){
   return document.getElementById(id).value;
 }
 
-function saveMessage(picPath, description){
+function saveMessage(picPath, description, coordinate){
   var newMessageRef = messageRef.push();
   newMessageRef.set({
     picPath: picPath,
-    description: description
+    description: description,
+    coordinate: coordinate
   });
 }
 
-  

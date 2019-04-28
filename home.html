@@ -94,7 +94,7 @@
                     
                     markers[0] = marker;
                         
-                    document.getElementById("coordinate").innerHTML = '<div id="latLng">' + event.latLng.lat() + ', ' + event.latLng.lat() +'</div>';
+                    document.getElementById("coordinate").innerHTML = '<div id="latLng">' + event.latLng.lat() + ',' + event.latLng.lng() + '</div>';
 
                     var userCoordinates = document.getElementById("latLng").innerText;
                     var mapCoord = userCoordinates.split(",", 2);
@@ -147,7 +147,8 @@
         </div>
       </div>
 
-      <div id="coordinate"></div>
+      <div class="coordinate" id="coordinate"></div>
+      <div id=coordinates></div>
 
       <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
