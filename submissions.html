@@ -31,7 +31,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">FixYourRoad</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="home.html" class="hoverable">Home</a></li>
+          <li><a href="index.html" class="hoverable">Home</a></li>
           <li><a href="account.html" class="hoverable">Account</a></li>
           <li><a href="submissions.html" class="white black-text hoverable">Submissions</a></li>
           <li><a href="maps.html" class="hoverable">Map</a></li>
@@ -64,7 +64,7 @@
       <li class="collection-item avatar">
         <i class="material-icons circle">folder</i>
         <span class="title" id="bigOne"><b>Big pothole</b></span>
-        <p>Popped my tire <br>
+        <p id="bigTwo">Popped my tire <br>
           <i>Modesto, CA</i>
         </p>
         <img class="materialboxed" src="pothole.JPG" alt="">
@@ -165,21 +165,14 @@
     firebase.initializeApp(config);
 
     var bigOne = document.getElementById('bigOne');
-    var dbRef = firebase.database().ref().child('Pothole Submissions').orderByValue();
-    //var dbRefTest = dbRef.startAt();
-    //dbRef.on('value', snap => bigOne.innerText = snap.val().description);
+    var dbRef = firebase.database().ref().child('Pothole Submissions').limitToFirst(1);
+    dbRef.on('value', snap => bigOne.innerText = snap.val().description);
     //console.log(dbRef);
     //console.log(dbRefTest);
     dbRef.on("child_added", function(snapshot) {
       console.log(snapshot.val().description)
-      document.getElementById('bigOne').innerHTML += createCard(snapshot.val().description, snapshot.val().picPath);
+      document.getElementById('bigOne').innerHTML += snapshot.val().description;
     });
-
-  function createCard(description, picPath){
-    description
-    <br>
-    picPath
-  }
 
   </script>
 
