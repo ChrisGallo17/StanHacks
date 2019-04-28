@@ -27,57 +27,19 @@ function submitForm(e){
   var picPath = getInputVal('picPath');
   var description = getInputVal('description');
 
-  saveMessage(picPath, description, tempLat, tempLng);
+  saveMessage(picPath, description);
 }
 
 function getInputVal(id){
   return document.getElementById(id).value;
 }
 
-function saveMessage(picPath, description, tempLat, tempLng){
+function saveMessage(picPath, description){
   var newMessageRef = messageRef.push();
   newMessageRef.set({
     picPath: picPath,
-    description: description,
-    tempLat: tempLat,
-    tempLng: tempLng
+    description: description
   });
 }
 
-
-var geoData = {
-  lat: 10,
-  lng: 10
-}
-
-var tempLat;
-var tempLng;
-
-
-
-  // // New map
-  // var map = new google.maps.Map(document.getElementById('homemap'), {
-  //   zoom: 15,
-  //   center: location
-  // });
-
-  // // Listen for click on map
-  // google.maps.event.addListener(map, 'click', function(e) {
-
-  //   //Passes a hidden coordinate to the form
-  //   tempLat = e.latLng.lat();
-  //   tempLng = e.latLng.lng();
-  //   console.log(tempLat, tempLng);
-  // });
-
-  // //Listens for the save button to be clicked
-  // document.getElementById("save").addEventListener("click", function() {
-  //   //Initialize variables and retrieve values
-  //   var title = document.getElementById('title').value;
-  //   var description = document.getElementById('description').value;
-  //   var userCoordinates = document.getElementById("latLng").innerText;
-  //   var mapCoord = userCoordinates.split(",", 2);
-
-  //   //Parses the coordinate strings
-  //   var userLat = parseFloat(mapCoord[0]);
-  //   var userLng = parseFloat(mapCoord[1]);}
+  
