@@ -40,7 +40,7 @@
       </div>
     </div>
 
-<!-- SIDE BAR -->
+    <!-- SIDE BAR -->
     <ul id="slide-out" class="sidenav">
       <li><a class="subheader">FixYourRoad</a></li>
       <li><a href="home.html"><i class="material-icons">home</i>Home</a></li>
@@ -60,57 +60,60 @@
   <br>
 
   <div>
-   <ul class="collection">
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title"><b>Big pothole</b></span>
-      <p>Popped my tire <br>
-        <i>Modesto, CA</i>
-      </p>
-      <img class="materialboxed" src="pothole.JPG" alt="">
-      <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
+    <ul class="collection">
+      <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title" id="bigOne"><b>Big pothole</b></span>
+        <p>Popped my tire <br>
+          <i>Modesto, CA</i>
+        </p>
+        <img class="materialboxed" src="pothole.JPG" alt="">
+        <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
 
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title"><b>Big ol' pothole 2</b></span>
-      <p>I'm heated bro<br>
-         <i>Turlock, CA</i>
-      </p>
-      <img class="materialboxed" src="https://tinyurl.com/y5ngp9bo" width="325" height="200" alt="">
-      <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title"><b>Big ol' Pothole 3</b></span>
-      <p>This one broke my axle<br>
-         <i>Pleasanton, CA</i>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title"><b>Big ol' pothole 4</b></span>
-      <p>Anonymous<br>
-         <i>San Jose, CA</i>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
-    </li>
-   </ul>
+      </li>
+      <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title"><b>Big ol' pothole 2</b></span>
+        <p>I'm heated bro<br>
+          <i>Turlock, CA</i>
+        </p>
+        <img class="materialboxed" src="https://tinyurl.com/y5ngp9bo" width="325" height="200" alt="">
+        <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
+      </li>
+      <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title"><b>Big ol' Pothole 3</b></span>
+        <p>This one broke my axle<br>
+          <i>Pleasanton, CA</i>
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
+      </li>
+      <li class="collection-item avatar">
+        <i class="material-icons circle">folder</i>
+        <span class="title"><b>Big ol' pothole 4</b></span>
+        <p>Anonymous<br>
+          <i>San Jose, CA</i>
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">star_border</i></a>
+      </li>
+    </ul>
   </div>
 
-    <div id="map"></div>
+  <div id="map"></div>
 
-    <script>
-        function initMap() {
-            var location = {lat: 37.524410, lng: -120.853592};
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 15,
-                center: location
-            });
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
+  <script>
+    function initMap() {
+      var location = {
+        lat: 37.524410,
+        lng: -120.853592
+      };
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: location
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
 
 
   <!--JavaScript at end of body for optimized loading-->
@@ -145,6 +148,39 @@
         },
       });
     });
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCjI3HoQTHMk_t2atkRFc6iWJBaP5JBCbY",
+      authDomain: "turlockpotholes.firebaseapp.com",
+      databaseURL: "https://turlockpotholes.firebaseio.com",
+      projectId: "turlockpotholes",
+      storageBucket: "turlockpotholes.appspot.com",
+      messagingSenderId: "921373741535"
+    };
+
+    firebase.initializeApp(config);
+
+    var bigOne = document.getElementById('bigOne');
+    var dbRef = firebase.database().ref().child('Pothole Submissions').orderByValue();
+    //var dbRefTest = dbRef.startAt();
+    //dbRef.on('value', snap => bigOne.innerText = snap.val().description);
+    //console.log(dbRef);
+    //console.log(dbRefTest);
+    dbRef.on("child_added", function(snapshot) {
+      console.log(snapshot.val().description)
+      document.getElementById('bigOne').innerHTML += createCard(snapshot.val().description, snapshot.val().picPath);
+    });
+
+  function createCard(description, picPath){
+    description
+    <br>
+    picPath
+  }
+
   </script>
 
 </body>
