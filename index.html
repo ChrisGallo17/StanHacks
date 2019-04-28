@@ -91,9 +91,9 @@
                 // This event listener will call addMarker() when the map is clicked.
                 map.addListener('click', function(event) {
                     addMarker(event.latLng);
-                    
+
                     markers[0] = marker;
-                        
+
                     document.getElementById("coordinate").innerHTML = '<div id="latLng">' + event.latLng.lat() + ',' + event.latLng.lng() + '</div>';
 
                     var userCoordinates = document.getElementById("latLng").innerText;
@@ -126,16 +126,16 @@
                         marker = new google.maps.Marker({
                             position: location,
                             map: map
-                            
+
                         });
                     }
                 }
             }
 
-            
+
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsR1Cdx1UalkR9-1cf6jxXgZvEeFxv7t4&callback=initMap"></script>
-    
+
       </div>
 
       <br>
@@ -171,12 +171,12 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  
+
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
   <!-- Player JavaScript file -->
-  <script src="JS/main.js"></script> 
+  <script src="JS/main.js"></script>
 
-    
+
 
   <script id="SideNavID">
     $(document).ready(function() {
